@@ -29,7 +29,7 @@ VALIDATE (){
     fi
 }
 
-echo "Script started executing at: $(date)" | tee -a
+echo "Script started executing at: $(date)" | tee -a $LOG_FILE
 
 CHECK_ROOT
 
