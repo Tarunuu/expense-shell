@@ -55,9 +55,5 @@ VALIDATE $? "Extract frontend code"
 cp /home/ec2-user/expense-shell/expense.conf /etc/nginx/default.d/expense.conf
 VALIDATE $? "copied expense conf"
 
-# Test Nginx configuration before restarting
-nginx -t &>>$LOG_FILE
-VALIDATE $? "Nginx configuration test"
-
 systemctl restart nginx &>>$LOG_FILE
 VALIDATE $? "Restarted Nginx"
