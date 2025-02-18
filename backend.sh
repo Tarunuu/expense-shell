@@ -49,7 +49,7 @@ then
     useradd expense &>>$LOG_FILE
     VALIDATE $? "Creating expense user"
 else
-    echo -e "expense user already exits... $Y SKIPPING $N"
+    echo -e "expense user already exits...$Y SKIPPING $N"
 fi
 
 mkdir -p /app
@@ -81,4 +81,4 @@ systemctl enable backend &>>$LOG_FILE
 VALIDATE $? "Enabled backend"
 
 systemctl restart backend &>>$LOG_FILE
-VALIDATE $? "Restart Backend"
+VALIDATE $? "Restarted Backend"
