@@ -52,11 +52,7 @@ cd /usr/share/nginx/html
 unzip /tmp/frontend.zip &>>$LOG_FILE
 VALIDATE $? "Extract frontend code"
 
-# Remove any old config files
-rm -rf /etc/nginx/default.d/expense.conf
-rm -rf /etc/nginx/conf.d/expense.conf
-
-cp /home/ec2-user/expense-shell/expense.conf /etc/nginx/conf.d/expense.conf
+cp /home/ec2-user/expense-shell/expense.conf /etc/nginx/default.d/expense.conf
 VALIDATE $? "copied expense conf"
 
 # Test Nginx configuration before restarting
